@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flatter20210905/CommonChat/commonchat.dart';
 
 void main() => runApp(new MaterialApp(
   home: new MyApp(),
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
                     child: new TextFormField(
                       decoration: new InputDecoration(labelText: "Email::"),
                       keyboardType: TextInputType.emailAddress,
+                      initialValue: "test@mail.ru",
                       maxLines: 1,
                       style: _sizeTextBlack,
                       onSaved: (val) => _email = val!,
@@ -40,6 +42,7 @@ class MyApp extends StatelessWidget {
                     child: new TextFormField(
                       decoration: new InputDecoration(labelText: "Password::"),
                       obscureText: true,
+                      initialValue: "testpassword",
                       maxLines: 1,
                       validator: (val) =>
                       val!.length < 6 ? 'Password too short.' : null,
@@ -83,7 +86,8 @@ class MyApp extends StatelessWidget {
     Navigator.push(
         _context,
         new MaterialPageRoute(
-            builder: (context) => new SecondScreen(_email, _password)));
+            //builder: (context) => new SecondScreen(_email, _password)));
+            builder: (context) => new CommonChatList(_email, _password)));
   }
 
   void hideKeyboard() {
