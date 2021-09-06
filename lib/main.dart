@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   new Container(
                     child: new TextFormField(
-                      decoration: new InputDecoration(labelText: "Email"),
+                      decoration: new InputDecoration(labelText: "Email:"),
                       keyboardType: TextInputType.emailAddress,
                       maxLines: 1,
                       style: _sizeTextBlack,
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                   ),
                   new Container(
                     child: new TextFormField(
-                      decoration: new InputDecoration(labelText: "Password"),
+                      decoration: new InputDecoration(labelText: "Password:"),
                       obscureText: true,
                       maxLines: 1,
                       validator: (val) =>
