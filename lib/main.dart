@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                       style: _sizeTextBlack,
                       onSaved: (val) => _email = val!,
                       validator: (val) =>
-                      !val!.contains("@") ? 'Not a valid email.' : null,
+                      !val!.contains("@") ? 'Not a valid email.'    : null,
                     ),
                     width: 400.0,
                   ),
