@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CommonChatList extends StatelessWidget {
@@ -35,8 +36,31 @@ class CommonChatList extends StatelessWidget {
                   title: Text(ChatMessages[index]),
                   trailing: Text(index.toString())
                 ),
-              )
 
+              ),
+              onDismissed: (direction){
+                showDialog(
+                    context: context,
+                    builder: (_)=> new AlertDialog(
+                      title: Text("Title"),
+                      content: Text("Content"),
+                      actions: [
+                        RaisedButton(
+                          onPressed: ()=>{
+                            Navigator.of(context, rootNavigator: true).pop()
+                          },
+                          child: const Text('Yes'),
+                        ),
+                        RaisedButton(
+                          onPressed: ()=>{
+                            Navigator.of(context, rootNavigator: true).pop()
+                          },
+                          child: const Text('No'),
+                        )
+                      ],
+                    ),
+                );
+              },
             );
           }
         )
